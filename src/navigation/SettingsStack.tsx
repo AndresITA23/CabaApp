@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Settings from '../screens/Settings';
 import {screen} from '../utils'
+import AddPlace from '../screens/AddPlace';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,8 +12,11 @@ const SettingsStack = () => {
             <Stack.Screen 
             name={screen.settings.settings} 
             component={Settings} 
-            options={{ title: "Settings" }}
+            options={{ title: "Settings", 
+            headerShown: false,
+            }}
             ></Stack.Screen>
+            <Stack.Screen name={screen.settings.addPlace} component={AddPlace}></Stack.Screen>
         </Stack.Navigator>
     )
 };
